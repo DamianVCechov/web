@@ -55,7 +55,8 @@ function openBook() {
 function closeBook(isAtStart) {
     if (isMobile()) {
         book.style.transform = "translateX(0%)";
-        book.style.left = "0px"; // Vycentrovat zavřenou obálku
+        // Pokud jsme na začátku (přední obálka) i na konci (zadní obálka), vynulujeme posun vlevo
+        book.style.left = "0px";
     } else {
         if (isAtStart) {
             book.style.transform = "translateX(0%)";
@@ -85,7 +86,6 @@ function goNextPage() {
         if (currentState === 1) {
             openBook();
         } else if (isMobile() && currentState < numOfPapers) {
-            // UPRAVENO: Po kliknutí na pravý list/Následující se fokus přesune na LEVÝ list
             book.style.left = "80vw";
         }
 
