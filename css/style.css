@@ -171,7 +171,12 @@ p {
 .image-container img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    
+    /* Vypnutí výběru a vizuálního přetahování */
+    user-select: none;
+    -webkit-user-drag: none;
+    -webkit-touch-callout: none; 
 }
 
 .contact-list {

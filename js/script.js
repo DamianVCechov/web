@@ -183,5 +183,32 @@ window.addEventListener("resize", () => {
     }
 });
 
+window.addEventListener("keydown", (e) => {
+    // Mezerník nebo Šipka vpravo -> další strana
+    if (e.code === "Space" || e.key === "ArrowRight") {
+        e.preventDefault(); // Zamezí nechtěnému skrolování stránky dolů
+        goNextPage();
+    } 
+    // Shift + Mezerník nebo Šipka vlevo -> předchozí strana
+    else if ((e.code === "Space" && e.shiftKey) || e.key === "ArrowLeft") {
+        e.preventDefault();
+        goPrevPage();
+    }
+});
+
+// Zákaz kontextového menu (pravého tlačítka) na obrázcích
+document.addEventListener("contextmenu", (e) => {
+    if (e.target.tagName === "IMG") {
+        e.preventDefault();
+    }
+});
+
+// Zákaz přetažení obrázku myší (drag & drop)
+document.addEventListener("dragstart", (e) => {
+    if (e.target.tagName === "IMG") {
+        e.preventDefault();
+    }
+});
+
 // Spuštění inicializace
 initZIndexes();
