@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Kniha nenalezena</title>
+    <link rel="stylesheet" href="css/404.css">
+</head>
+<body>
+
+    <div class="error-wrapper">
+        <!-- Ztracená / poškozená kniha -->
+        <div class="book-container">
+            <div class="lost-book">
+                <div class="book-cover">
+                    <div class="error-code">404</div>
+                    <div class="bookmark"></div>
+                    <div class="torn-page"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Textové sdělení -->
+        <div class="error-content">
+            <h1>Tato kapitola chybí</h1>
+            <p>Stránka nebo kniha, kterou hledáte, byla vytržena, přesunuta nebo nikdy neexistovala v naší knihovně.</p>
+        </div>
+
+        <!-- Odkazy / Navigace -->
+        <div class="controls">
+            <a href="index.html" class="nav-btn primary">📚 Zpět do Knihovny</a>
+            <button onclick="history.back()" class="nav-btn">← Předchozí stránka</button>
+        </div>
+    </div>
+
+</body>
+</html>

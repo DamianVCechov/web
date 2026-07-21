@@ -1,0 +1,187 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* Stejný radiální gradient jako u hlavní aplikace a knihovny */
+    background: radial-gradient(circle at center, #2e1e3e 0%, #111122 100%);
+    color: #cdd6f4;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    overflow-x: hidden;
+}
+
+.error-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+}
+
+/* 3D Ztracená kniha */
+.book-container {
+    perspective: 1000px;
+    margin-bottom: 40px;
+}
+
+.lost-book {
+    width: 180px;
+    height: 260px;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateY(-20deg) rotateX(10deg);
+    animation: float 4s ease-in-out infinite;
+}
+
+.book-cover {
+    width: 100%;
+    height: 100%;
+    background-color: #0f0f1a;
+    border: 1px solid #3e3f5c;
+    border-radius: 4px 8px 8px 4px;
+    box-shadow: 15px 20px 35px rgba(0, 0, 0, 0.6), inset -4px 0 8px rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hřbet knihy */
+.book-cover::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 14px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.08);
+    border-right: 1px solid rgba(0, 0, 0, 0.4);
+    border-radius: 4px 0 0 4px;
+}
+
+/* Číslo 404 na obálce */
+.error-code {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #f5c2e7;
+    text-shadow: 0 0 15px rgba(245, 194, 231, 0.3);
+    letter-spacing: 2px;
+}
+
+/* Záložka do knihy */
+.bookmark {
+    position: absolute;
+    top: 0;
+    right: 35px;
+    width: 16px;
+    height: 50px;
+    background-color: #89b4fa;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 80%, 0 100%);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+/* Vytržená stránka vyčnívající z knihy */
+.torn-page {
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+    width: 70px;
+    height: 90px;
+    background-color: #161622;
+    border: 1px solid #2a2b3d;
+    transform: rotate(15deg);
+    clip-path: polygon(0 0, 100% 10%, 85% 90%, 60% 80%, 40% 100%, 15% 85%, 0 100%);
+    z-index: -1;
+}
+
+/* Animace levitace */
+@keyframes float {
+    0%, 100% {
+        transform: rotateY(-20deg) rotateX(10deg) translateY(0px);
+    }
+    50% {
+        transform: rotateY(-15deg) rotateX(5deg) translateY(-12px);
+    }
+}
+
+/* Texty */
+.error-content h1 {
+    color: #f5c2e7;
+    font-size: 2rem;
+    margin-bottom: 15px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.error-content p {
+    color: #a6adc8;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 35px;
+}
+
+/* Ovládací tlačítka */
+.controls {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.nav-btn {
+    background-color: #0f0f1a;
+    color: #cdd6f4;
+    border: 1px solid #3e3f5c;
+    padding: 12px 24px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    user-select: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    display: inline-flex;
+    align-items: center;
+}
+
+.nav-btn:hover {
+    background-color: #242538;
+    border-color: #f5c2e7;
+    transform: translateY(-2px);
+    color: #fff;
+}
+
+.nav-btn.primary {
+    border-color: #89b4fa;
+    color: #89b4fa;
+}
+
+.nav-btn.primary:hover {
+    background-color: #1e1e30;
+    border-color: #f5c2e7;
+    color: #f5c2e7;
+}
+
+/* Mobilní responzivita */
+@media (max-width: 600px) {
+    .error-content h1 {
+        font-size: 1.6rem;
+    }
+    .controls {
+        flex-direction: column;
+        width: 100%;
+    }
+    .nav-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
