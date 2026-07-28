@@ -4,6 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Moje Knihovna</title>
+    
+    <!-- Favicon a ikony pro prohlížeče a mobilní zařízení -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="theme-color" content="#2b2b2b">
+
+    <!-- Open Graph metadata pro sdílení na sociálních sítích -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Damianova knihovna">
+    <meta property="og:description" content="Katalog autorových skic, kreseb a bastlířských projektů.">
+    <meta property="og:image" content="og-image.jpg">
+
     <link rel="stylesheet" href="css/library.css">
 </head>
 <body>
@@ -14,13 +29,9 @@
             <p>Vyberte si knihu a prolistujte si její obsah</p>
         </header>
 
-        <!-- Mřížka s kartami / miniaturami knih -->
         <main class="books-grid">
-
-            <!-- KNIHA 1 -->
             <a href="kniha-kresby.html" class="book-card">
                 <div class="book-thumb">
-                    <!-- Miniatura obálky knihy -->
                     <div class="thumb-cover">
                         <div class="thumb-title">Kresbičky</div>
                         <div class="thumb-subtitle">Damian V. Čechov</div>
@@ -32,8 +43,6 @@
                     <p>Aktualizováno: 20.7.2026</p>
                 </div>
             </a>
-
-            <!-- KNIHA 2 -->
             <a href="kniha-bastleni.html" class="book-card">
                 <div class="book-thumb">
                     <div class="thumb-cover">
@@ -47,12 +56,11 @@
                     <p>Aktualizováno: 20.7.2026</p>
                 </div>
             </a>
-
-            <!-- KNIHA 3 (Příklad další knihy) -->
             <a href="#" class="book-card disabled">
                 <div class="book-thumb">
                     <div class="thumb-cover">
                         <div class="thumb-title">Připravuje se...</div>
+                        <div class="thumb-subtitle"></div>
                     </div>
                 </div>
                 <div class="book-info">
@@ -60,8 +68,15 @@
                     <p>Další tvorba již brzy.</p>
                 </div>
             </a>
-
         </main>
+
+        <footer class="library-footer">
+            <div class="footer-link-right">
+                <a href="https://linktr.ee/DamianVCechov" target="_blank" rel="noopener noreferrer" class="avatar-link" title="Linktree / DamianVCechov">
+                    <img src="https://lh3.googleusercontent.com/d/1KwyzPdL9RR7ztEzVlMCdF-SJRupdaCI0" alt="Damian V. Čechov" class="avatar-img">
+                </a>
+            </div>
+        </footer>
     </div>
 
 </body>
