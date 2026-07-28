@@ -169,8 +169,8 @@ body {
 
 .avatar-link {
     display: block;
-    width: 128px; 
-    height: 128px;
+    width: 96px; 
+    height: 96px;
     border-radius: 50%;
     overflow: hidden;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
